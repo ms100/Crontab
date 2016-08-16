@@ -8,7 +8,7 @@ class CrontabRule{
      *
      * @return array/string 正确返回数组，出错返回字符串（错误信息）
      */
-    static public function check_time_rule($time_rule){
+    public static function check_time_rule($time_rule){
         //格式检查
         $time_rule = trim($time_rule);
         $reg = '#^(\*(/\d+)?|((\d+(-\d+)?)(?2)?)(,(?3))*)( (?1)){4}$#';
@@ -35,7 +35,7 @@ class CrontabRule{
      *
      * @return array/bool
      */
-    static protected function parse_time_rule_part($part, $f_min, $f_max){
+    protected static function parse_time_rule_part($part, $f_min, $f_max){
         $list = array();
 
         //处理"," -- 列表
@@ -88,7 +88,7 @@ class CrontabRule{
      * @param $year
      * @return array
      */
-    static protected function get_mday_by_wday($wday, $mon, $year){
+    protected static function get_mday_by_wday($wday, $mon, $year){
         $res = array();
         if(is_array($wday)){
             if(count($wday) <= 4){
@@ -123,7 +123,7 @@ class CrontabRule{
      * @param $timestamp
      * @return bool|int
      */
-    static public function get_next_time($time_rule, $timestamp = 0){
+    public static function get_next_time($time_rule, $timestamp = 0){
         empty($timestamp) && $timestamp = time();
 
         $parts = explode(' ', $time_rule);
