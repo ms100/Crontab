@@ -1,4 +1,4 @@
-[PHP Crontab](https://github.com/MS100/Sudoku)
+[PHP Crontab](https://github.com/MS100/Crontab)
 =============================
 
 [CrontabRule](https://github.com/MS100/Crontab/blob/master/CrontabRule.php)
